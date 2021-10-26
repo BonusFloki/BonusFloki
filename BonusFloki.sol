@@ -513,6 +513,8 @@ contract BonusFloki is IBEP20, Auth {
 
         isFeeExempt[msg.sender] = true;
         isTxLimitExempt[msg.sender] = true;
+		isTxLimitExempt[address(this)] = true;
+        isTxLimitExempt[pair] = true;
 
         isTimelockExempt[msg.sender] = true;
         isTimelockExempt[DEAD] = true;
